@@ -2,10 +2,22 @@ import { Component } from "react";
 import "./App.css";
 
 class App extends Component {
+  state = {
+    posts: [],
+  };
+
+  componentDidMount() {}
+
   render() {
+    const { posts } = this.state;
     return (
       <div className="App">
-        <h1>A</h1>
+        {posts.map((post) => (
+          <div key={post.id}>
+            <h1>{post.title}</h1>
+            <p>{post.body}</p>
+          </div>
+        ))}
       </div>
     );
   }
